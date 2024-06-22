@@ -331,7 +331,7 @@ class NeuralNetwork(Group):
             # Add the animation to per layer animation
             per_layer_animation_map[layer] = layer_forward_pass
         # Make the animation group
-        animation_group = Succession(*all_animations, lag_ratio=1.0)
+        animation_group = Succession(*all_animations, lag_ratio=1.0, run_time=run_time)
         if per_layer_animations:
             return per_layer_animation_map
         else:
